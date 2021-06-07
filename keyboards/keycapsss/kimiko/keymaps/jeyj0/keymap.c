@@ -38,6 +38,10 @@ enum layers {
 #define SFT_KCJ  RSFT_T(KC_J)
 #define SFT_KCT  LSFT_T(KC_T)
 #define SFT_KCA  RSFT_T(KC_A)
+#define SFT_RPRN LSFT_T(KC_RPRN)
+#define SFT_KC4  RSFT_T(KC_4)
+#define SFT_RGHT LSFT_T(KC_RGHT)
+#define SFT_LEFT RSFT_T(KC_LEFT)
 
 #define COM_QUS  KC_COMM
 #define DOT_EXC  KC_DOT
@@ -55,16 +59,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_HANDS_ON] = LAYOUT(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, KC_Q,    KC_Z,    XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_W,    KC_G,    KC_M,    KC_P,    KC_ESC,                      KC_QUOT, KC_U,    KC_K,    KC_J,    KC_SCLN, XXXXXXX,
+    _______, KC_W,    KC_G,    KC_M,    KC_P,    KC_ESC,                      KC_QUOT, KC_U,    KC_K,    KC_J,    KC_SCLN, XXXXXXX,
     XXXXXXX, KC_R,    KC_S,    KC_N,    SFT_KCT, KC_B,                        KC_Y,    SFT_KCA, KC_O,    KC_I,    KC_H,    XXXXXXX,
-    KC_LCTL, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     XXXXXXX, XXXXXXX,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, XXXXXXX,
+    _______, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     XXXXXXX, XXXXXXX,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, _______,
                       _______, _______, _______, NUM_E,    _______, _______,  _______, _______, _______, _______
 ),
 
 [_NUM] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                     KC_AT,   KC_7,    KC_8,    KC_9,    _______, _______,
-    _______, KC_HASH, KC_EQL,  KC_LPRN, KC_RPRN, KC_TILD,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_DLR,  _______,
+    _______, KC_HASH, KC_EQL,  KC_LPRN, SFT_RPRN,KC_TILD,                     KC_CIRC, SFT_KC4, KC_5,    KC_6,    KC_DLR,  _______,
     _______, _______, KC_ASTR, KC_LT,   KC_GT,   KC_GRV,   _______, _______,  KC_AMPR, KC_1,    KC_2,    KC_3,    KC_PIPE, _______,
                       _______, _______, _______, _______,  _______, _______,  KC_0,    _______, _______, _______
 ),
@@ -72,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NAV] = LAYOUT(
     LT_SETT, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, LT_SETT,
     _______, _______, KC_PGUP, KC_UP,   KC_PGDN, _______,                     _______, KC_PGDN, KC_UP,   KC_PGUP, _______, _______,
-    _______, KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,                      KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT, KC_END,  _______,
+    _______, KC_HOME, KC_LEFT, KC_DOWN, SFT_RGHT,KC_END,                      KC_HOME, SFT_LEFT,KC_DOWN, KC_RGHT, KC_END,  _______,
     _______, _______, _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______, _______, _______,
                       _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______
 ),
