@@ -34,8 +34,10 @@ enum layers {
 #define NAV_ENT  LT(_NAV, KC_ENT)
 #define LT_SETT  LT(_SETTINGS, _______)
 
-#define SFT_F    LSFT_T(KC_F)
-#define SFT_J    RSFT_T(KC_J)
+#define SFT_KCF  LSFT_T(KC_F)
+#define SFT_KCJ  RSFT_T(KC_J)
+#define SFT_KCT  LSFT_T(KC_T)
+#define SFT_KCA  RSFT_T(KC_A)
 
 #define COM_QUS  KC_COMM
 #define DOT_EXC  KC_DOT
@@ -44,27 +46,27 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT(
-    KC_ESC,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                        KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    XXXXXXX,
-    KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
-    KC_ESC,   KC_A,   KC_S,    KC_D,    SFT_F,   KC_G,                        KC_H,    SFT_J,   KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,     KC_LBRC, KC_RBRC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                      KC_LCTL, KC_LGUI, KC_LALT, NUM_SPC,  NAV_BSPC,NAV_ENT,  NUM_SPC, KC_RALT, KC_RGUI, KC_RCTL
+    KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
+    KC_ESC,  KC_A,    KC_S,    KC_D,    SFT_KCF, KC_G,                        KC_H,    SFT_KCJ, KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     XXXXXXX, XXXXXXX,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTL,
+                      KC_CAPS, KC_LGUI, KC_LGUI, NUM_E,    NAV_BSPC,NAV_ENT,  NUM_SPC, KC_RALT, KC_RGUI, KC_CAPS
 ),
 
 [_HANDS_ON] = LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, KC_Q,    KC_Z,    XXXXXXX, XXXXXXX,
     XXXXXXX, KC_W,    KC_G,    KC_M,    KC_P,    KC_ESC,                      KC_QUOT, KC_U,    KC_K,    KC_J,    KC_SCLN, XXXXXXX,
-    XXXXXXX, KC_R,    KC_S,    KC_N,    KC_T,    KC_B,                        KC_Y,    KC_A,    KC_O,    KC_I,    KC_H,    XXXXXXX,
-    XXXXXXX, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     XXXXXXX, XXXXXXX,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, XXXXXXX,
-                      KC_LCTL, KC_LGUI, KC_LALT, NUM_E,    NAV_BSPC,NAV_ENT,  NUM_SPC, KC_RALT, KC_RGUI, KC_RCTL
+    XXXXXXX, KC_R,    KC_S,    KC_N,    SFT_KCT, KC_B,                        KC_Y,    SFT_KCA, KC_O,    KC_I,    KC_H,    XXXXXXX,
+    KC_LCTL, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     XXXXXXX, XXXXXXX,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, XXXXXXX,
+                      _______, _______, _______, NUM_E,    _______, _______,  _______, _______, _______, _______
 ),
 
 [_NUM] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                     KC_AT,   KC_7,    KC_8,    KC_9,    _______, _______,
     _______, KC_HASH, KC_EQL,  KC_LPRN, KC_RPRN, KC_TILD,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_DLR,  _______,
-    _______, _______, KC_ASTR, KC_LT,   KC_GT,   _______,  _______, _______,  KC_AMPR, KC_1,    KC_2,    KC_3,    KC_PIPE, _______,
-                      _______, _______, _______, _______,  _______, _______,  _______, KC_0,    _______, _______
+    _______, _______, KC_ASTR, KC_LT,   KC_GT,   KC_GRV,   _______, _______,  KC_AMPR, KC_1,    KC_2,    KC_3,    KC_PIPE, _______,
+                      _______, _______, _______, _______,  _______, _______,  KC_0,    _______, _______, _______
 ),
 
 [_NAV] = LAYOUT(
