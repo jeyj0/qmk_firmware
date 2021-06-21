@@ -49,5 +49,6 @@
 #define SPLIT_USB_DETECT
 #define NO_USB_STARTUP_CHECK
 
+#define TAPPING_TERM 500
 #define PERMISSIVE_HOLD // better mod-tap when typing fast
-#define IGNORE_MOD_TAG_INTERRUPT // make mod-tap be more strict when to act as mod
+#define IGNORE_MOD_TAP_INTERRUPT // make mod-tap be more strict when to act as mod
