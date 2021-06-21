@@ -1,6 +1,7 @@
-OLED_DRIVER_ENABLE = yes   # Enables the use of OLED displays
+# OLED_DRIVER_ENABLE = yes   # Enables the use of OLED displays
 ENCODER_ENABLE = yes       # ENables the use of one or more encoders
-RGBLIGHT_ENABLE = yes      # Enable keyboard RGB underglow
+# RGBLIGHT_ENABLE = yes      # Enable keyboard RGB underglow
+POINTING_DEVICE_ENABLE = yes
 
 # LTO: Link Time Optimizations.
 # Reduce compiled size, but will automatically disable the legacy TMK Macros and Functions features.
