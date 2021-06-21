@@ -30,6 +30,7 @@ enum layers {
 #define QWERTY   DF(_QWERTY)
 #define NUM_SPC  LT(_NUM, KC_SPC)
 #define NUM_E    LT(_NUM, KC_E)
+#define NUM_KC0  LT(_NUM, KC_0)
 #define NAV_BSPC LT(_NAV, KC_BSPC)
 #define NAV_ENT  LT(_NAV, KC_ENT)
 #define LT_SETT  LT(_SETTINGS, _______)
@@ -130,9 +131,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NUM] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                     KC_AT,   KC_7,    KC_8,    KC_9,    _______, _______,
-    _______, KC_HASH, KC_EQL,  KC_LPRN, SFT_RPRN,KC_TILD,                     KC_CIRC, SFT_KC4, KC_5,    KC_6,    KC_DLR,  _______,
+    _______, KC_HASH, KC_EQL,  KC_LPRN, KC_RPRN, KC_TILD,                     KC_CIRC, SFT_KC4, KC_5,    KC_6,    KC_DLR,  _______,
     _______, _______, KC_ASTR, KC_LT,   KC_GT,   KC_GRV,   _______, _______,  KC_AMPR, KC_1,    KC_2,    KC_3,    KC_PIPE, _______,
-                      _______, _______, _______, _______,  _______, _______,  KC_0,    _______, _______, _______
+                      _______, _______, _______, _______,  _______, _______,  NUM_KC0, _______, _______, _______
 ),
 
 [_NAV] = LAYOUT(
