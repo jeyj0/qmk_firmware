@@ -55,3 +55,8 @@
 
 #define FORCE_NKRO
 
+#define MK_3_SPEED // set mousekeys to constant speed
+#define MK_MOMENTARY_ACCEL // only change speed when holding
+#define MOUSEKEY_MOVE_DELTA 5
+#define MOUSEKEY_MAX_SPEED 10
+
