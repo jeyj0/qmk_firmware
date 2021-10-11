@@ -46,8 +46,8 @@
 // #endif
 
 // If you are using an Elite C rev3 on the slave side, uncomment the lines below:
-#define SPLIT_USB_DETECT
-#define NO_USB_STARTUP_CHECK
+// #define SPLIT_USB_DETECT
+// #define NO_USB_STARTUP_CHECK
 
 #define TAPPING_TERM 300
 #define PERMISSIVE_HOLD // better mod-tap when typing fast
