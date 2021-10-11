@@ -22,6 +22,7 @@ enum layers {
     _HANDS_ON,
     _QWERTY,
     _NUM,
+    _FN,
     _NAV,
     _MOUSE,
     _SETTINGS,
@@ -115,7 +116,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_HANDS_ON] = LAYOUT(
-    KC_Q,    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_Q,    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, OSL(_FN),                    OSL(_FN),XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     KC_TAB,  KC_W,    KC_G,    KC_M,    KC_P,    KC_ESC,                      KC_QUOT, KC_U,    KC_K,    KC_J,    KC_SCLN, XXXXXXX,
     KC_Z,    KC_R,    KC_S,    KC_N,    SFT_KCT, KC_B,                        KC_Y,    SFT_KCA, KC_O,    KC_I,    KC_H,    KC_Q,
     KC_LCTL, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     KC_MUTE, KC_MUTE,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, KC_RCTL,
@@ -123,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_QWERTY] = LAYOUT(
-    KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,                     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
     KC_ESC,  KC_A,    KC_S,    KC_D,    SFT_KCF, KC_G,                        KC_H,    SFT_KCJ, KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_MUTE, KC_MUTE,  KC_N,    KC_M,    _______, _______, _______, _______,
@@ -136,6 +137,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_HASH, KC_EQL,  KC_LPRN, KC_RPRN, KC_TILD,                     KC_CIRC, SFT_KC4, KC_5,    KC_6,    KC_DLR,  _______,
     _______, _______, KC_ASTR, KC_LT,   KC_GT,   KC_GRV,   _______, _______,  KC_AMPR, KC_1,    KC_2,    KC_3,    KC_PIPE, _______,
                       _______, _______, _______, _______,  _______, _______,  NUM_KC0, _______, _______, _______
+),
+
+[_FN] = LAYOUT(
+    _______, _______, KC_F12,  KC_F11,  KC_F10,  _______,                     _______, KC_F10,  KC_F11,  KC_F12, _______, _______,
+    _______, _______, KC_F9,   KC_F8,   KC_F7,   _______,                     _______, KC_F7,   KC_F8,   KC_F9,    _______, _______,
+    _______, _______, KC_F6,   KC_F5,   KC_F4,   _______,                     _______, KC_F4,   KC_F5,   KC_F6,    _______, _______,
+    _______, _______, KC_F3,   KC_F2,   KC_F1,   _______,  _______, _______,  _______, KC_F1,   KC_F2,   KC_F3,    _______, _______,
+                      _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______
 ),
 
 [_NAV] = LAYOUT(
