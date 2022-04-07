@@ -47,6 +47,11 @@ enum layers {
 #define SFT_RGHT LSFT_T(KC_RGHT)
 #define SFT_LEFT LSFT_T(KC_LEFT)
 
+#define CTL_KCN  LCTL_T(KC_N)
+#define CTL_KCO  RCTL_T(KC_O)
+#define CTL_KCD  LCTL_T(KC_D)
+#define CTL_KCK  RCTL_T(KC_K)
+
 enum custom_keycodes {
     COM_QUS,
     DOT_EXC,
@@ -118,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_HANDS_ON] = LAYOUT(
     KC_Q,    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, OSL(_FN),                    OSL(_FN),XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     KC_TAB,  KC_W,    KC_G,    KC_M,    KC_P,    KC_ESC,                      KC_QUOT, KC_U,    KC_K,    KC_J,    KC_SCLN, XXXXXXX,
-    KC_Z,    KC_R,    KC_S,    KC_N,    SFT_KCT, KC_B,                        KC_Y,    SFT_KCA, KC_O,    KC_I,    KC_H,    KC_Q,
+    KC_Z,    KC_R,    KC_S,    CTL_KCN, SFT_KCT, KC_B,                        KC_Y,    SFT_KCA, CTL_KCO, KC_I,    KC_H,    KC_Q,
     KC_LCTL, KC_X,    KC_C,    KC_L,    KC_D,    KC_V,     KC_MUTE, KC_MUTE,  KC_MINS, KC_F,    COM_QUS, DOT_EXC, SLS_BSL, KC_RCTL,
                       KC_CAPS, KC_LALT, KC_LGUI, NUM_E,    NAV_BSPC,NAV_ENT,  NUM_SPC, MSE_AGR, KC_RGUI, KC_CAPS
 ),
@@ -126,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT(
     KC_ESC,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______,                     _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     _______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                        KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_MINS,
-    KC_ESC,  KC_A,    KC_S,    KC_D,    SFT_KCF, KC_G,                        KC_H,    SFT_KCJ, KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    KC_ESC,  KC_A,    KC_S,    CTL_KCD, SFT_KCF, KC_G,                        KC_H,    SFT_KCJ, CTL_KCK, KC_L,    KC_SCLN, KC_QUOT,
     _______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_MUTE, KC_MUTE,  KC_N,    KC_M,    _______, _______, _______, _______,
                       _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______
 ),
