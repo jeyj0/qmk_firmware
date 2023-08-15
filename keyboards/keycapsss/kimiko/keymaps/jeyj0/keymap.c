@@ -21,6 +21,7 @@
 enum layers {
     _HANDS_ON,
     _QWERTY,
+    _GAMING,
     _NUM,
     _FN,
     _NAV,
@@ -30,6 +31,7 @@ enum layers {
 
 #define HANDS    DF(_HANDS_ON)
 #define QWERTY   DF(_QWERTY)
+#define GAMING   DF(_GAMING)
 #define NUM_SPC  LT(_NUM, KC_SPC)
 #define NUM_E    LT(_NUM, KC_E)
 #define NUM_KC0  LT(_NUM, KC_0)
@@ -136,6 +138,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______
 ),
 
+[_GAMING] = LAYOUT(
+    KC_ESC,  KC_5,    KC_6,    KC_7,    KC_8,    KC_9,                        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,
+    KC_TAB,  KC_LCTL, KC_Q,    KC_W,    LSFT_T(KC_E), KC_ESC,                 _______, KC_WH_U, KC_WH_D, _______, _______, _______,
+    KC_T,    KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,                        _______, KC_BTN1, KC_BTN2, _______, _______, _______,
+    KC_F3,   KC_LCTL, KC_1,    KC_2,    KC_3,    KC_4,     _______, _______,  _______, _______, _______, _______, _______, _______,
+                      KC_LGUI, _______, KC_LCTL, KC_SPC,   KC_BTN2, _______,  _______, _______, _______, _______
+),
+
 [_NUM] = LAYOUT(
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                     KC_AT,   KC_7,    KC_8,    KC_9,    _______, _______,
@@ -169,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_SETTINGS] = LAYOUT(
-    _______, HANDS,   QWERTY,  _______, _______, RESET,                       RESET,   _______, _______, QWERTY,  HANDS,   _______,
+    _______, HANDS,   QWERTY,  GAMING,  _______, RESET,                       RESET,   _______, GAMING,  QWERTY,  HANDS,   _______,
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                     _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,  _______, _______,  _______, _______, _______, _______, _______, _______,
@@ -191,6 +201,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code(KC__VOLUP);
                 }
                 break;
+            case _GAMING:
+                if (clockwise) {
+                    tap_code(KC_WH_D);
+                } else {
+                    tap_code(KC_WH_U);
+                }
+                break;
         }
     }
     // Encoder on slave side
@@ -202,6 +219,13 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
                     tap_code(KC__VOLUP);
                 } else {
                     tap_code(KC__VOLDOWN);
+                }
+                break;
+            case _GAMING:
+                if (clockwise) {
+                    tap_code(KC_WH_D);
+                } else {
+                    tap_code(KC_WH_U);
                 }
                 break;
         }
